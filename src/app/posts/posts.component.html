@@ -1,0 +1,11 @@
+<div class="row mt-5">
+  <div class="col ml-4">
+      <div *ngIf="posts | async as list; else loading">
+            <div *ngFor="let post of list" class="list-group">
+                <a [routerLink]="['/post/', post.id]" class="list-group-item">{{post.title}}</a>
+            </div>
+      </div>
+      <ng-template #loading>Loading Data...</ng-template>
+  </div>
+  
+</div>
